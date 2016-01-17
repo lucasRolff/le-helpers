@@ -24,7 +24,7 @@ foreach my $line (@lines)
     $accesshash .= $line;
 }
 
-my $auth = "Basic " . MIME::Base64::encode( $user . ":" . $accesshash );
+my $auth = "WHM root:" . $accesshash;
 
 my $ua = LWP::UserAgent->new(
     ssl_opts   => { verify_hostname => 0, SSL_verify_mode => 'SSL_VERIFY_NONE', SSL_use_cert => 0 },
